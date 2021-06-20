@@ -20,8 +20,10 @@ public class HomeWork {
     public  void verifyPricingPageTitle(){
         System.out.println();
         driver.get("https://picsart.com");
+        //Click on item
         WebElement pricingItem = driver.findElement(By.cssSelector("[data-test='headerNavigation-navigationListItem-Pricing']"));
         pricingItem.click();
+        //Get title text
         WebElement pageTitle = driver.findElement(By.cssSelector("h1.gold-pricing-title"));
         System.out.println(pageTitle.getText().equals("Try PicsArt Gold Free for 7-Days"));
 
