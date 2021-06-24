@@ -1,5 +1,6 @@
 import okio.Timeout;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,13 +9,14 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 public class HomeWork {
     String  path = "/Users/levonyanlilit/Downloads/chromedriver";
     WebDriver driver;
-    private static final int DELAY = 10;
+    private static final int DELAY = 20;
 
     @BeforeMethod
     public void initDriver(){
@@ -39,8 +41,10 @@ public class HomeWork {
 
     @Test
     public  void verifyLoginFunctionality() throws InterruptedException {
-        System.out.println();
-        driver.get("https://picsart.com");
+       //
+        driver.get("https://picsartstage2.com");
+       // driver.manage().window().maximize();
+
         WebElement loginButton = driver.findElement(By.cssSelector("[data-test='headerAuth-signInBtn pa-uiLib-headerAuth-authBtn']"));
         if(driver.findElement(By.cssSelector("[class*='home-title']")).getText().equals("Create Amazing Photo & Video Edits With Online Design Tools"));
         {
@@ -66,6 +70,16 @@ public class HomeWork {
             e.getMessage();
             System.out.println("false");
         }
+
+       List <WebElement> templets = driver.findElements(By.cssSelector("[data-test='template-item']"));
+        System.out.println(templets.get(2).findElement(By.cssSelector(".pa-uiLib-tooltip-container")).isDisplayed());
+        //List<WebElement> instaStorys = driver.findElements(By.cssSelector("[data-test='insta-story']"));
+        //instaStorys.get(4).click();\
+        driver.get("https://picsartstage2.com/create/editor?templateSize=insta_story");
+        driver.manage().addCookie(new Cookie("we-editor-first-open","true"));
+        driver.navigate().refresh();
+
+
 
 
     }
