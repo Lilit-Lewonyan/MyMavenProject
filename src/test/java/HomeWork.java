@@ -78,6 +78,7 @@ public class HomeWork {
         driver.get("https://picsartstage2.com/create/editor?templateSize=insta_story");
         driver.manage().addCookie(new Cookie("we-editor-first-open","true"));
         driver.navigate().refresh();
+        driver.switchTo().window();
 
 
 
