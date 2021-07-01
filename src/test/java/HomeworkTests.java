@@ -9,7 +9,7 @@ import java.util.List;
 
 public class HomeworkTests extends BaseMethods {
     @Test
-    public void signUp() {
+    public void testDragAndDrop() {
         driver.get("https://picsartstage2.com/create");
         List<WebElement> instaStories = driver.findElements(By.cssSelector("[data-test='instagram-square']"));
         instaStories.get(0).click();
@@ -19,6 +19,7 @@ public class HomeworkTests extends BaseMethods {
         stickersTab.click();
         WebElement stiker= driver.findElement(By.cssSelector("[id='270647809007900']"));
         stiker.click();
+
 
     }
 }
