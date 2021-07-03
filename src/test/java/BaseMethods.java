@@ -26,8 +26,8 @@ public class BaseMethods {
         driver = new ChromeDriver();
         //I add this because can not get the elemt till the pop up is not full loaded
         driver.manage().timeouts().implicitlyWait(DELAY, TimeUnit.SECONDS);
-        signUp();
-        driver.manage().addCookie(new Cookie("user_key",userKey));
+       // signUp();
+       // driver.manage().addCookie(new Cookie("user_key",userKey));
         driver.manage().addCookie(new Cookie("we-editor-first-open","true"));
         driver.navigate().refresh();
 
