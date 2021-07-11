@@ -1,8 +1,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="name">
+    <listeners>
+        <listener class-name="ListnerTest"></listener>
+    </listeners>
     <test name="Lilit">
         <classes>
-            <class name="FirstTest"></class>
+            <class name="CreateTest"></class>
         </classes>
     </test>
 </suite>
