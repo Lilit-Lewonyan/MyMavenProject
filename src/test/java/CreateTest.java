@@ -1,9 +1,7 @@
 import Config.Configuration;
 import Config.DriverUtils;
-import PageObjects.CreatePage;
+import PagesViaPageFactory.CreatePage;
 import org.openqa.selenium.Cookie;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
